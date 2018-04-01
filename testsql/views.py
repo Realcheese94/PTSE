@@ -17,13 +17,15 @@ def loginuser(request):
     userid = request.POST.get('UserID')
     userpw = request.POST.get('UserPW')
     for val in alluser:
+        #아이디와 비밀번호가 맞을 경우, userMain이라는 페이지 생성
         if userid==val["id"] and userpw==val["pw"]:
              return render(request,"userMain.html",{
                  "userid" : userid,
                  "userpw" : userpw
              })
+        #아이디와 비밀번호가 맞지 않을경우
         else:
-             messages.warning(request, 'Please check your ID/PW')
+             
              return render(request,"Main.html")
 
 def registuser(request):
