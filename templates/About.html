@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>PrevenT SolitudE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel ="stylesheet" type = "text/css" href="Maincss.css">
+
+</style>
+<script type ="text/javascript">
+
+var body = $('#video');
+
+
+
+</script>
+<script src ="Log-in.js"></script>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" style="background-color: black">
+
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" >
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="Main.html" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
+    <a href="#about" data-transition =slide class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
+    <a href="#schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+    <a href="#infromation" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
+   
+    <a href="#nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
+    
+    <a href="#log-in" class="w3-bar-item w3-button w3-hide-small" onclick="login()" ><i class="fa fa-user" ></i> Log-in </a>
+ 
+  </div>
+
+</div>
+ 
+</div>
+
+
+<div id="log-in">
+    
+    <br> <br> <br>
+    <h1> LOG - IN</h1>
+    <br>
+    
+        ID :<br>
+        <input type="text" name="UserID" id="idform"><br><br>
+        PASSWORD:<br>
+        <input type="password" name="UserPW" id="pwform"><br><br><br><br>
+        <button type="button" name="signin" value="" class="css3button">Sign -  in</button><br><br>
+        <button type="button" name="register" value="" class="css3button">Register </button>
+</div>
+
+
+<div id = "aboutpage" >
+
+  <div id ="aboutcontent">
+
+
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+
+
+
+
+
+
+<script>
+
+
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+
+
+
+</script>
+
+
+</body>
+</html>

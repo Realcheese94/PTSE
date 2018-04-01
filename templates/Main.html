@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<title>PrevenT SolitudE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel ="stylesheet" href="{% static 'css/Maincss.css'%}">
+
+</style>
+<script type ="text/javascript">
+
+var body = $('#video');
+
+function aboutpage(){
+
+  
+}
+
+</script>
+<script src ="{% static 'css/Log-in.js'%}"></script>
+</head>
+<body item-height="100%">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" style="background-color: black">
+
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" >
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
+   
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
+    
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="login()" id="login" ><i class="fa fa-user" ></i> Log-in </a>
+ 
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    
+
+  </div>
+</div>
+<div id ="about-page">
+  <br><br><br>
+  <font color="#fffffff"><p><h1>P</h1>reven<h1>T</h1> <h1>S</h1>olitud<h1>E</h1><br>
+ 
+  PTSE는 사회복지사들의 편의를 위해 만들어졌습니다.<br>
+  1인 가구 증가 저출산,고령화 가족해체 등의 사회 변화로 사회적 관계망이 약화되면서  고독사가 증가 하고 있다. <br>
+  노인들의 숫자 보다 독거노인을 관리하는 사람들의 숫자도 부족하여 사회복지사의 인원 증가도 필요한 시점이지만 <br>
+  사회 복지사를 직업으로 하고싶은 사람들의 수치는 낮게 나타내고 있습니다.<br>
+  점점 고령화와 1인가구, 핵가족화가 증가하지만 이에 따른 사회적인 상황은 대처하지 못하고 있고<br>
+   앞으로도 대처하지 못할 것으로 보여서 이러한 서비스가 필요하다고 생각이 들었습니다.<br><br><br><br>
+  <p>
+      - 사회 복지사 혹은 노인요양사의 인력의 효율성이 좋아진다.<br>
+      - 기존에 존재하고있던 시스템보다 높은 효율성<br>
+      - 독거사 혹은 안전사고 발생시 빠른 대처 가능<br>
+      - 실시간으로 보내는 사진을 스마트액자화로 볼 수 있어서 고독함 감소<br>
+      - 체계적인 보호를 받을 수 있다.<br>
+      - 사회복시가의 실시간 케어 가능<br>
+      - 사생활 보호가 되는 동시에 사생활 침해 방지<br>
+      - 근무시간외의 시간은 사회복지사의 핸드폰으로 문자전송<br>
+      - 사회복지사 외의 사람은 관람 불가<br>
+      - 사전 동의를 받은 후 희망자에 한하여 서비스 제공<br>
+      - 주로 거주하고있는 방에 웹캠 설치<br>
+      - 잠을 자는 것과 움직임을 파악하여 위험알람 제공<br>
+      <br><br><br><br><br><br><br><br><br>
+
+
+  </p>
+  </font>
+</p>
+
+</div>
+
+<div id="log-in">
+    
+    <br> <br> <br>
+    <h1><font color="#ffffffff"> LOG - IN</font></h1>
+    <br>
+    <form method="POST" action="/loginuser">     
+        ID :<br>
+        <input type="text" name="UserID" id="idform"><br><br>
+        PASSWORD:<br>
+        <input type="password" name="UserPW" id="pwform"><br><br><br><br>
+        <button type="submit" name="signin" value="" class="css3button">Sign -  in</button><br><br>
+        <button type="submit" name="register" value="" class="css3button">Register </button>
+      </form>
+</div>
+
+
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+
+  <div class="w3-display-middle" style="white-space:nowrap;" align="center">
+
+
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+P T  <span class="w3-hide-small"> S E </span>
+
+
+
+  </div>
+ 
+</div>
+
+<div id="video" >
+    <video src ="{% static 'css/PTSEV2.mp4'%}" autoplay loop    allowfullscreen="" frameborder="0"></video>
+</div>
+
+
+
+
+<script>
+
+
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+
+
+
+</script>
+
+
+</body>
+</html>
