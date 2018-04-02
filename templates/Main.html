@@ -87,11 +87,15 @@ function aboutpage(){
     <h1><font color="#ffffffff"> LOG - IN</font></h1>
     <br>
     <form method="POST" action="/loginuser">     
+      {% csrf_token %}
         ID :<br>
         <input type="text" name="UserID" id="idform"><br><br>
         PASSWORD:<br>
         <input type="password" name="UserPW" id="pwform"><br><br><br><br>
         <button type="submit" name="signin" value="" class="css3button">Sign -  in</button><br><br>
+      </form>
+      <form method ="POST" action="/register">
+        {% csrf_token %}
         <button type="submit" name="register" value="" class="css3button">Register </button>
       </form>
 </div>

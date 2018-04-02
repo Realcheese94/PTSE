@@ -17,7 +17,7 @@ def loginuser(request):
     userid = request.POST.get('UserID')
     userpw = request.POST.get('UserPW')
     for val in alluser:
-        #아이디와 비밀번호가 맞을 경우, userMain이라는 페이지 이동
+        #아이디와 비밀번호가 맞을 경우, userMain이라는 페이지 이동(개인별 디비 접속 조회 가능)
         if userid==val["id"] and userpw==val["pw"]:
              return render(request,"userMain.html",{
                  "userid" : userid,
@@ -25,7 +25,9 @@ def loginuser(request):
              })
         #아이디와 비밀번호가 맞지 않을경우
         else:             
-             return render(request,"Main.html")
+             return HttpResponseRedirect('/')
 
 def registuser(request):
-    pass
+    return render(request,"registuser.html")
+
+    
