@@ -2,6 +2,7 @@
 var logflag =1;
 var aboutflag =1;
 
+
 function login(){
     var loginflag =  document.getElementById("log-in");
     if(logflag==0){
@@ -18,6 +19,7 @@ function login(){
 
 }
 
+
 function aboutpage(){
     var aboutpageflag = document.getElementById("about-page");
     
@@ -30,4 +32,7 @@ function aboutpage(){
         aboutpageflag.style.display="block";
         aboutflag=0;
     }
+}
+function test(){
+    alert('hi');
 }

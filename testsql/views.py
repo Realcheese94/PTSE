@@ -28,29 +28,38 @@ def loginuser(request):
         else:             
              return HttpResponseRedirect('/')
              
-@csrf_exempt
-def registuser(request):
-    return render(request,"registuser.html")
   
 
 @csrf_exempt
 def registercheck(request):
-    suserid = request.POST.get('ruserid')
-    alluser = dao.bringalluser()
+    ruserid = request.POST.get('ruserid')
+    ruserpw = request.POST.get('ruserpw')
+    rusername = request.POST.get('rusername')
+    rusertel = request.POST.get('rusertel')
+    ruserinfo = request.POST.get('ruserinfo')    
+    alluser = dao.bringalluserid()
     #전체 유저중 아이디만 검색하여 id가 중복되는지를 검사하는 과정
     for val in alluser:
         #아이디는 중복 할 수 없기때문에 아이디가 겹치면 무조건 /register로...
-        if suserid==val["id"]:
-            return HttpResponseRedirect('/register')
-        else:
-            pass
+        if val==ruserid:
+            return render(request,"registuser.html")
+         #dic ={'id':row[1],'pw':row[2]}
+        registuserinforms={'id':ruserid,'pw':ruserpw,'name':rusername,'tel':rusername,'info':ruserinfo}                             
+        dao.insert2newuser(registuserinforms)
+        return HttpResponseRedirect('/')
             #현재 아이디중 입력값과 동일한게 없다면? ->받아온다.
-            #공백,최대문자길이 html 단에서 처리....
+            #공백,최대문자길이 html 단에서 처리.... 
             
            # return HttpResponseRedirect('/')
 
+#regist창으로 가는 def
+def registuser(request):
+    return render(request,"registuser.html")
 
+    
 
+def testing(request):
+    return render(request,"test.html")
 
 #informtion자료 보여주는 곳
 def Informations(request):

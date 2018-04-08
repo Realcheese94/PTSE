@@ -21,7 +21,10 @@ function aboutpage(){
 }
 
 </script>
-<script src ="{% static 'css/Log-in.js'%}"></script>
+<script src ="{% static 'css/Main.js'%}"></script>
+
+
+
 </head>
 <body item-height="100%">
 
@@ -40,15 +43,13 @@ function aboutpage(){
     <a href="#" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
     
     <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="login()" id="login" ><i class="fa fa-user" ></i> Log-in </a>
- 
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     
+  </div> 
+ 
+  <!-- Navbar on small screens -->
 
-  </div>
 </div>
+
 <div id ="about-page">
   <br><br><br>
   <font color="#fffffff"><p><h1>P</h1>reven<h1>T</h1> <h1>S</h1>olitud<h1>E</h1><br>
@@ -91,15 +92,18 @@ function aboutpage(){
         ID :<br>
         <input type="text" name="UserID" id="idform"><br><br>
         PASSWORD:<br>
-        <input type="password" name="UserPW" id="pwform"><br><br><br>
+        <input type="password" name="UserPW" id="pwform"><br><br><br><br>
         <button type="submit" name="signin" value="" class="css3button">Sign -  in</button><br><br>
-      </form>
-      <form method ="POST" action="/register">
+      </form> 
+
+      <form method="POST" action="/registuser">     
         {% csrf_token %}
-        <button type="submit" name="register" value="" class="css3button">Register </button>
-      </form>
+        <button type="submit" id ="registerbutton"class="css3button" onclick="register()">Register </button>
+     </form>
+</div>
 </div>
 
+  
 
 
 
@@ -122,6 +126,7 @@ P T  <span class="w3-hide-small"> S E </span>
 <div id="video" >
     <video src ="{% static 'css/PTSEV2.mp4'%}" autoplay loop    allowfullscreen="" frameborder="0"></video>
 </div>
+
 
 
 
