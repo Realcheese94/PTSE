@@ -8,5 +8,5 @@ urlpatterns =[
     url(r'^logout$',auth_views.logout,{'next_page' : '/'}),
     url(r'^registcheck$',views.registercheck,name='registcheck'),        
     url(r'^registuser$',views.registuser,name='registuser'),
-          
+    url(r'^loginuser/Schedule$',views.Schedules,name="loginuser/Schedule"),          
 ]
