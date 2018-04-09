@@ -43,31 +43,30 @@ def registercheck(request):
         #아이디는 중복 할 수 없기때문에 아이디가 겹치면 무조건 /register로...
         if val==ruserid:
             return render(request,"registuser.html")
-         #dic ={'id':row[1],'pw':row[2]}
-        registuserinforms={'id':ruserid,'pw':ruserpw,'name':rusername,'tel':rusername,'info':ruserinfo}                             
-        dao.insert2newuser(registuserinforms)
-        return HttpResponseRedirect('/')
+        else:
+            #dic ={'id':row[1],'pw':row[2]}
+            rf = SUser(SuserId=ruserid,Suserpw=ruserpw,Susername=rusername,Susertel=rusertel)
+            rf.save()
+            return HttpResponseRedirect('/')
             #현재 아이디중 입력값과 동일한게 없다면? ->받아온다.
             #공백,최대문자길이 html 단에서 처리.... 
             
+
            # return HttpResponseRedirect('/')
 
 #regist창으로 가는 def
 def registuser(request):
     return render(request,"registuser.html")
-
     
 
-def testing(request):
-    return render(request,"test.html")
 
 #informtion자료 보여주는 곳
 def Informations(request):
-    pass
+    return render(request, "information.html")
 
 #스케쥴 관리 보여주는 view
 def Schedules(request):
-    pass
+    return render(request,"Schedule.html")
  #   return render(request,"Information.html")
 
 
