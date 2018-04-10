@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import SUser
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from . import dao
 from django.contrib import messages
@@ -20,16 +20,23 @@ def loginuser(request):
     for val in alluser:
         #아이디와 비밀번호가 맞을 경우, userMain이라는 페이지 이동(개인별 디비 접속 조회 가능)
         if userid==val["id"] and userpw==val["pw"]:
-             return render(request,"userMain.html",{
-                 "userid" : userid,
-                 "userpw" : userpw,
-             })
+
+            context = {'userid':userid,
+                       'userpw':userpw,
+                       'username':val["name"],
+                       'userno':val["no"],
+                       'usertel':val["tel"],
+                       }
+
+            request.session['context']= context
+
+            return render(request,"Main.html")
         #아이디와 비밀번호가 맞지 않을경우
         else:             
              return HttpResponseRedirect('/')
              
   
-
+#회원가입 유효성 검증 def
 @csrf_exempt
 def registercheck(request):
     ruserid = request.POST.get('ruserid')
@@ -62,7 +69,19 @@ def registuser(request):
 
 #informtion자료 보여주는 곳
 def Informations(request):
-    return render(request, "information.html")
+    
+    if request.session.:
+        userid = request.session["context"]['userid']
+        username = request.session["context"]['username']
+        usertel = request.session["context"]['usertel']
+        userno = request.session["context"]['userno']
+        return render(request, "information.html",{"userid" : userid,
+                                               "username": username,
+                                               "usertel": usertel,
+                                               "userno":userno
+    })
+    else:
+        return render(request,"information.html")
 
 #스케쥴 관리 보여주는 view
 def Schedules(request):

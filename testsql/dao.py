@@ -9,7 +9,7 @@ def bringalluser():
     rows = cursor.fetchall()
     posts=[]
     for row in rows:
-        dic ={'id':row[1],'pw':row[2]}
+        dic ={'no':row[0],'id':row[1],'pw':row[2],'name':row[3],'tel':row[4]}
         posts.append(dic)
     return posts
 
