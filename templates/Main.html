@@ -41,7 +41,7 @@ function aboutpage(){
     <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
    
     <a href="/nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
-    {% if request.session.context %}
+    {% if request.session.userid %}
     <a href="/logout" class="w3-bar-item w3-button w3-hide-small" onclick="logout" id="logout" ><i class="fa fa-user" ></i> Log-out </a>
     
     {% else %}

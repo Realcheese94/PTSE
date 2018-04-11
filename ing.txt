@@ -1,4 +1,14 @@
-1. 회원가입 버튼 누르면 register.html 이동동작 보수, 값 전달
-2. ModelForm 이용하여 regist 에 검증 및 cleand_data? 활용 저장
+완료 된것
+1.로그인 유효성
+2. 회원가입 유형성
+3. 페이지별 세션 관리 및 다른 view
+4. main 및 information f-front-end
 
-3. 모든 템플릿 이동 경로 및 저장 디비 관리ㄴ
+해야할 것
+Information.html
+내가 관리하고 있는 할머니 할아버지들 ,자신의 정보 표시
+
+
+
+schedule.html
+자신의 스케쥴 표시 -> 할머니 할아버지 지정 가능( 태그)

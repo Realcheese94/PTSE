@@ -20,15 +20,12 @@ def loginuser(request):
     for val in alluser:
         #아이디와 비밀번호가 맞을 경우, userMain이라는 페이지 이동(개인별 디비 접속 조회 가능)
         if userid==val["id"] and userpw==val["pw"]:
-
-            context = {'userid':userid,
-                       'userpw':userpw,
-                       'username':val["name"],
-                       'userno':val["no"],
-                       'usertel':val["tel"],
-                       }
-
-            request.session['context']= context
+            request.session['userid']= userid
+            request.session['userpw']= userpw
+            request.session['username']= val["name"]
+            request.session['userno']= val["no"]
+            request.session['usertel']= val["tel"]
+            
 
             return render(request,"Main.html")
         #아이디와 비밀번호가 맞지 않을경우
@@ -69,19 +66,10 @@ def registuser(request):
 
 #informtion자료 보여주는 곳
 def Informations(request):
-    
-    if request.session.:
-        userid = request.session["context"]['userid']
-        username = request.session["context"]['username']
-        usertel = request.session["context"]['usertel']
-        userno = request.session["context"]['userno']
-        return render(request, "information.html",{"userid" : userid,
-                                               "username": username,
-                                               "usertel": usertel,
-                                               "userno":userno
-    })
-    else:
-        return render(request,"information.html")
+    return render(request, "information.html")
+
+def Informationss(request):
+    return render(request,"information.html")
 
 #스케쥴 관리 보여주는 view
 def Schedules(request):

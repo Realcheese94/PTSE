@@ -42,7 +42,7 @@ function aboutpage(){
       <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
      
       <a href="/nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
-      {% if request.session.context %}
+      {% if request.session.userid %}
       <a href="/logout" class="w3-bar-item w3-button w3-hide-small" onclick="logout" id="logout" ><i class="fa fa-user" ></i> Log-out </a>
       
       {% else %}
@@ -115,15 +115,19 @@ function aboutpage(){
 
 <div id = "registform">
         <font color="#ffffffff"><br>
-{% if request.session.context %}
- <h4>no :&nbsp; &nbsp; &nbsp; {{userno}}</h4>
- <h4>ID :&nbsp; &nbsp; &nbsp; {{userid}}</h4>
- <h4>Name :&nbsp; &nbsp; &nbsp; {{username}}</h4>
- <h4>Tel :&nbsp; &nbsp; &nbsp; {{usertel}}</h4>
+{% if request.session.userno %}
+ <h4>no :&nbsp; &nbsp; &nbsp; {{request.session.userno}}</h4>
+ <h4>ID :&nbsp; &nbsp; &nbsp; {{request.session.userid}}</h4>
+ <h4>Name :&nbsp; &nbsp; &nbsp; {{request.session.username}}</h4>
+ <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4>
  
- {%else%}
- <h2><br><br>회원가입을 먼저 해주셔야 합니다.</h2>
- {%endif%}
+
+
+ <button type ="button" class ="css3button">Modified My Profile</button>
+ {% else %}
+ <h2><br><br>로그인 을 먼저 해주셔야 합니다.</h2>
+ 
+ {% endif %}
 
  
    
