@@ -66,10 +66,9 @@ def registuser(request):
 
 #informtion자료 보여주는 곳
 def Informations(request):
+     request.session['userno']
     return render(request, "information.html")
 
-def Informationss(request):
-    return render(request,"information.html")
 
 #스케쥴 관리 보여주는 view
 def Schedules(request):

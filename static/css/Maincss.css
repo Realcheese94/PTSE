@@ -32,9 +32,11 @@ body, html {
       min-width: 1024px;
       max-height: 100%;
       top: 0;
-      left:0;
+      left: 0;
       right: 0;
       z-index: -100;
+    
+
 }
 
 /* First image (Logo. Full height) */
@@ -119,21 +121,17 @@ button.css3button {
 		0px -1px 0px rgba(0,0,0,0.7),
 		0px 1px 0px rgba(255,255,255,0.3);
 }
-#page{
-    background-color: beige;
-}
+
 
 
 #about-page{
     display: none;
     background: black;
     width: 80%;
-    height: 95%;
-    margin-left: 90px;
+    height: 90%;    
     text-align: center;
-    overflow-y: scroll;
-   
-
+    overflow-y: scroll;   
+    margin-left: 100px;
 }
 
 button.smallcss3button {
