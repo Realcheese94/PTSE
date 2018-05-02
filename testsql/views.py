@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import SUser
+from .models import SUser,NUser
 from django.http import HttpResponse,HttpResponseRedirect,HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from . import dao
@@ -66,8 +66,11 @@ def registuser(request):
 
 #informtion자료 보여주는 곳
 def Informations(request):
-     request.session['userno']
-    return render(request, "information.html")
+    userno = request.session['userno']
+    nrname = NUser.objects.filter(Chargeuser_id = userno)
+    return render(request, "information.html",{
+        'nrname' : nrname,
+        })
 
 
 #스케쥴 관리 보여주는 view

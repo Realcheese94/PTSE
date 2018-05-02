@@ -119,11 +119,17 @@ function aboutpage(){
  <h4>no :&nbsp; &nbsp; &nbsp; {{request.session.userno}}</h4>
  <h4>ID :&nbsp; &nbsp; &nbsp; {{request.session.userid}}</h4>
  <h4>Name :&nbsp; &nbsp; &nbsp; {{request.session.username}}</h4>
- <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4>
+ <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4><br><br>
  
-
+ <h3> 현재 담당 노인 목록</h3>
+{% for nrnames in nrname %}
+<li>{{nrnames.NUsername}}</li><br>
+{% endfor %}
 
  <button type ="button" class ="css3button">Modified My Profile</button>
+
+
+
  {% else %}
  <h2><br><br>로그인 을 먼저 해주셔야 합니다.</h2>
  <h4>아이디가 없다면 귀사의 회원가입을 해주시고 진행을 부탁 드립니다.</h4>
