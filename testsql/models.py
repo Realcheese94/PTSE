@@ -22,6 +22,6 @@ class UserCalendar(models.Model):
     Udate = models.IntegerField(null = True)
     Udoing = models.CharField(max_length=20, null=True)
 
- 
+ #사회복지사 사진 테이블
 
 # Create your models here.

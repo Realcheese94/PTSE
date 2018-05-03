@@ -66,19 +66,20 @@ def registuser(request):
 
 #informtion자료 보여주는 곳
 def Informations(request):
-    userno = request.session['userno']
-    nrname = NUser.objects.filter(Chargeuser_id = userno)
-    return render(request, "information.html",{
-        'nrname' : nrname,
-        })
-
+        ruserno = request.session['userno']
+        nrname = NUser.objects.filter(Chargeuser_id = ruserno)
+        return render(request, "information.html",{
+            'nrname' : nrname,
+            })
+ 
 
 #스케쥴 관리 보여주는 view
 def Schedules(request):
     return render(request,"Schedule.html")
  #   return render(request,"Information.html")
 
-
+def oldpersoninfo(request):
+    return render(request,"oldinfo.html")
             
 
     
