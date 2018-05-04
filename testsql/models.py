@@ -6,7 +6,7 @@ class SUser(models.Model):
     Suserpw = models.CharField(max_length=10,null=False)
     Susername = models.CharField(max_length=10,null=False)
     Susertel = models.CharField(max_length=11,null=False)
-    
+    Suserimage =models.ImageField(default='default.png',blank=True)
     def __str__(self):
         return self.SuserId
         
@@ -22,6 +22,5 @@ class UserCalendar(models.Model):
     Udate = models.IntegerField(null = True)
     Udoing = models.CharField(max_length=20, null=True)
 
- #사회복지사 사진 테이블
 
 # Create your models here.

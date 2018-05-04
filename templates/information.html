@@ -118,9 +118,10 @@ function aboutpage(){
           
 {% if request.session.userno %}
 <div id="userimage">
-<input type ="file"  value="업로드" id="user_image"/>
 
+  <img src="{{SUser.Suserimage.url}}"/>
 </div>
+
  <h4>no :&nbsp; &nbsp; &nbsp; {{request.session.userno}}</h4>
 
  <h4>ID :&nbsp; &nbsp; &nbsp; {{request.session.userid}}</h4>
