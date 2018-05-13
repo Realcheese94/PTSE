@@ -80,6 +80,10 @@ def Schedules(request):
 
 def oldpersoninfo(request):
     return render(request,"oldinfo.html")
+
+
+def nowshowing(request):    
+    return render(request,"nowshowing.html")
             
 
     

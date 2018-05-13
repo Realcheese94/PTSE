@@ -22,6 +22,8 @@ def bringalluserid():
     for row in rows:
         posts.append(row[0])
     return posts
+    
+
 
     
     

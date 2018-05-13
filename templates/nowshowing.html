@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel ="stylesheet" href="{% static 'css/Maincss.css'%}">
-<link rel ="stylesheet" href="{% static 'css/Registcss.css'%}">
+
 </style>
 <script type ="text/javascript">
 
@@ -22,40 +22,44 @@ function aboutpage(){
 
 </script>
 <script src ="{% static 'css/Main.js'%}"></script>
-<script src="{% static 'css/Regist.js'%}"></script>
 
 
 
 </head>
-<body item-height="100%" bgcolor="#474544">
+<body item-height="100%">
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar" id="myNavbar" style="background-color: black">
-  
-      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" >
-        <i class="fa fa-bars"></i>
-      </a>
-      <a href="/" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
-      <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
-      <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
-     
-      <a href="/Nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
-      {% if request.session.userid %}
-      <a href="/logout" class="w3-bar-item w3-button w3-hide-small" onclick="logout" id="logout" ><i class="fa fa-user" ></i> Log-out </a>
-      
-      {% else %}
-      <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="login()" id="login" ><i class="fa fa-user" ></i> Log-in </a>
-      {% endif %}
-  
-    </div> 
+  <div class="w3-bar" id="myNavbar" style="background-color: black">
+
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu" >
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
+    {% if request.session.userid %}
+    <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+    <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
+   
+    <a href="/nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
+    {% else %}
+    <a href="/registuser" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+    <a href="/registuser" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
+   
+    <a href="/registuser" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
+    {% endif %}
+
+    {% if request.session.userid %}
+    <a href="/logout" class="w3-bar-item w3-button w3-hide-small" onclick="logout" id="logout" ><i class="fa fa-user" ></i> Log-out </a>
+    
+    {% else %}
+    <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="login()" id="login" ><i class="fa fa-user" ></i> Log-in </a>
+    {% endif %}
+
+  </div> 
  
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-   
 
-  </div>
 </div>
 
 <div id ="about-page">
@@ -111,47 +115,14 @@ function aboutpage(){
 </div>
 </div>
 
-
-
-<div id = "registform">
-        <font color="#ffffffff">
-
- {% if request.session.userno %}
- <!--<h4>no :&nbsp; &nbsp; &nbsp; {{request.session.userno}}</h4>
- <h4>ID :&nbsp; &nbsp; &nbsp; {{request.session.userid}}</h4>
- <h4>Name :&nbsp; &nbsp; &nbsp; {{request.session.username}}</h4>
- <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4>
- 
- -->
- <h4>{{request.session.nrname}}&nbsp; 님의&nbsp;&nbsp;   Information&nbsp;  </h4>
-<table>
-<TD></TD>
-
-</table>
-
-
-
- 
-
-
-
- {% else %}
- <h2><br><br>로그인 을 먼저 해주셔야 합니다.</h2>
- <h4>아이디가 없다면 귀사의 회원가입을 해주시고 진행을 부탁 드립니다.</h4>
- <h5>*상단의 log-in 을 눌러 회원가입 및 로그인을 수행 하실 수 있습니다*</h5>
- {% endif %}
-
-   
-
-</form>
-</div>
-</font>
-</div>
   
 
 
 
 
+<div class="now-showing">
+웹캠과 연결 이전의 모습입니다.
+</div>
 
 
 
@@ -159,8 +130,29 @@ function aboutpage(){
 
 
 
+<script>
+
+
+
+
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+
+
+
+</script>
 
 
 </body>
-
 </html>

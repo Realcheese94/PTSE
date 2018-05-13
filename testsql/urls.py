@@ -11,5 +11,5 @@ urlpatterns =[
     url(r'^schedule$',views.Schedules,name="Schedule"),
     url(r'^information$',views.Informations, name ='information'),
     url(r'^oldpersoninfo$',views.oldpersoninfo,name='oldpersoninfo'),    
-
+    url(r'^nowshowing$',views.nowshowing,name='nowshowing'),
 ]
