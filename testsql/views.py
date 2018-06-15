@@ -90,10 +90,10 @@ def nowshowing(request):
             
 def writetodolist(request):
     todoname = request.POST.get('todolist')
-    ruserno = request.session.get('userno')
+    ruserno = request.session['userno']
     Td = UserTodo(Todoname =todoname,TodoUserno=ruserno)
     Td.save()
-    return HttpResponse('/')
+    return render(request,'Schedule.html')
 
     
             

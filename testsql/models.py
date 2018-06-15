@@ -24,6 +24,6 @@ class UserCalendar(models.Model):
 
 #사회복지사 Todolist , 자신이 업무를 하면서 까먹거나 잊지 않게 메모장 형식, 체크박스로 삭제가능.
 class UserTodo(models.Model):
-    Todoname = models.CharField(max_length=20,null=False)
-    TodoUserno = models.CharField(max_length=10,null = False)
+    Todoname = models.CharField(max_length=20,null=True)
+    TodoUserno = models.CharField(max_length=10,null = True)
 # Create your models here.
