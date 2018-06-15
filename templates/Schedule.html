@@ -38,10 +38,10 @@ function aboutpage(){
       </a>
       <a href="/" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
-      <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+      <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> To-Do</a>
       <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
      
-      <a href="/Nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
+      <a href="/nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
       {% if request.session.userid %}
       <a href="/logout" class="w3-bar-item w3-button w3-hide-small" onclick="logout" id="logout" ><i class="fa fa-user" ></i> Log-out </a>
       
@@ -123,14 +123,17 @@ function aboutpage(){
  <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4>
  
  -->
- <h4>{{request.session.userid}}&nbsp; 님의&nbsp;&nbsp;   Schedule&nbsp; Table </h4>
-<table>
-<TD></TD>
+ <h4>{{request.session.userid}}&nbsp; 님의&nbsp;&nbsp;   TO-DO&nbsp; List </h4>
+ <form action="/writetodo" method="GET">
+  {% csrf_token %}
+ <textarea cols=50 rows=3 id = "todolist"></textarea><br>
+ <button type="submit" class ="smallcss3button">작성하기</button>
+</form>
 
-</table>
 
-
-
+<div id = "nowTodoList">
+  <li></li>
+</div>
  
 
 

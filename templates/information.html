@@ -38,7 +38,7 @@ function aboutpage(){
       </a>
       <a href="/" class="w3-bar-item w3-button" onclick="homebutton()"><h4>P T S E</h4></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small" onclick="aboutpage()"><i class="fa fa-bars" ></i> About</a>
-      <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i> Schedule</a>
+      <a href="/schedule" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-calendar"></i>To-Do</a>
       <a href="/information" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-book" ></i> Information</a>
      
       <a href="/nowshowing" class="w3-bar-item w3-button w3-hide-small" ><i class="fa fa-camera" ></i> Now-showing</a>
@@ -121,9 +121,7 @@ function aboutpage(){
 
   
 </div>
-<form action="submit" >
-<input type ="file" id ="userimage" />
-</form>
+
  <h4>no :&nbsp; &nbsp; &nbsp; {{request.session.userno}}</h4>
 
  <h4>ID :&nbsp; &nbsp; &nbsp; {{request.session.userid}}</h4>
@@ -131,12 +129,13 @@ function aboutpage(){
  <h4>Tel :&nbsp; &nbsp; &nbsp; {{request.session.usertel}}</h4><br><br>
  
  <h3> 현재 담당 노인 목록</h3>
+
+ 
 {% for nrnames in nrname %}
-<li><a href="/oldpersoninfo">{{nrnames.NUsername}}</a></li><br>
+
+<li id="oldpersonname"><a href ="#" onclick="oldpersonname()" id ="oldpersonname">{{nrnames.NUsername}}</a></li>
+
 {% endfor %}
-
-
-
 
 
  {% else %}
@@ -155,19 +154,7 @@ function aboutpage(){
 </font>
 </div>
   
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
+

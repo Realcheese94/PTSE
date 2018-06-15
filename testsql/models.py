@@ -22,5 +22,8 @@ class UserCalendar(models.Model):
     Udate = models.IntegerField(null = True)
     Udoing = models.CharField(max_length=20, null=True)
 
-
+#사회복지사 Todolist , 자신이 업무를 하면서 까먹거나 잊지 않게 메모장 형식, 체크박스로 삭제가능.
+class UserTodo(models.Model):
+    Todoname = models.CharField(max_length=20,null=False)
+    Username = models.ForeignKey(SUser,on_delete=models.CASCADE,null =False)
 # Create your models here.

@@ -79,7 +79,10 @@ def Schedules(request):
  #   return render(request,"Information.html")
 
 def oldpersoninfo(request):
-    return render(request,"oldinfo.html")
+    nrname= request.POST.get('oldpersonname')
+    return render(request,"oldinfo.html",{
+        'nrname': nrname,
+    })
 
 
 def nowshowing(request):    

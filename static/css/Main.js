@@ -36,3 +36,8 @@ function aboutpage(){
 function test(){
     alert('hi');
 }
+
+function oldpersonname(){
+  var name = document.getElementById("oldpersonname")
+  alert(name)
+}
