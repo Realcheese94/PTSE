@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import SUser,NUser
+from .models import SUser,NUser,UserTodo
 from django.http import HttpResponse,HttpResponseRedirect,HttpRequest
 from django.views.decorators.csrf import csrf_exempt
 from . import dao
@@ -88,6 +88,12 @@ def oldpersoninfo(request):
 def nowshowing(request):    
     return render(request,"nowshowing.html")
             
+def writetodolist(request):
+    todoname = request.POST.get('todolist')
+    ruserno = request.session.get('userno')
+    Td = UserTodo(Todoname =todoname,TodoUserno=ruserno)
+    Td.save()
+    return HttpResponse('/')
 
     
             

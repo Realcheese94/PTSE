@@ -124,9 +124,9 @@ function aboutpage(){
  
  -->
  <h4>{{request.session.userid}}&nbsp; 님의&nbsp;&nbsp;   TO-DO&nbsp; List </h4>
- <form action="/writetodo" method="GET">
+ <form action="/writetodo" method="POST">
   {% csrf_token %}
- <textarea cols=50 rows=3 id = "todolist"></textarea><br>
+ <input type="text" size="20" id = "todolist" style="width:50%;"/><br><br>
  <button type="submit" class ="smallcss3button">작성하기</button>
 </form>
 

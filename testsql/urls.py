@@ -12,4 +12,5 @@ urlpatterns =[
     url(r'^information$',views.Informations, name ='information'),
     url(r'^oldpersoninfo$',views.oldpersoninfo,name='oldpersoninfo'),    
     url(r'^nowshowing$',views.nowshowing,name='nowshowing'),
+    url(r'^writetodo$',views.writetodolist,name="writetodo"),
 ]
